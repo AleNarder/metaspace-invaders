@@ -4,6 +4,18 @@ body, html {
     padding: 0;
 }
 
+/*-------------------------*/
+/* APP UI
+*/
+
+#app-ui {
+  z-index: 1;
+}
+
+/*-------------------------*/
+/* APP XR
+*/
+
 #app-ui,
 #app-xr {
   position: absolute;
@@ -16,6 +28,20 @@ body, html {
   height: 100%;
 }
 
-#app-ui {
-  z-index: 1;
+/*-------------------------*/
+/* APP UI-XR
+*/
+
+#app-ui-xr {
+  display: none;
+}
+
+#app-ui-xr:xr-overlay {
+  display: block;
+  bottom: 0 !important;
+  top: unset !important;
+  color: red !important;
+  left: 10px !important;
+  width: 10px !important;
+  height: 10px !important;
 }

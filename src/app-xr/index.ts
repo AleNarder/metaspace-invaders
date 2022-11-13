@@ -18,7 +18,9 @@ export class AppXR {
     readonly options: {
       root: string;
     }
-  ) {}
+  ) {
+    window.appxr = this
+  }
 
   @bind
   async start() {
@@ -36,6 +38,7 @@ export class AppXR {
         this._initReferenceSpace,
       )(this.options.root);
 
+      console.log(this.session.domOverlayState)
       this.session?.requestAnimationFrame(this._onFrame);
     } catch (e) {
       console.error(e);
@@ -82,7 +85,12 @@ export class AppXR {
 
   @bind
   private async _initSession() {
-    this.session = await navigator.xr!.requestSession("immersive-ar");
+    this.session = await navigator.xr!.requestSession("immersive-ar", {
+      optionalFeatures: ['dom-overlay'],
+      domOverlay: {
+        root: document.querySelector('#app-ui-xr')!
+      }
+    });
     this.session.updateRenderState({
       baseLayer: new XRWebGLLayer(this.session, this.gl!),
     });
