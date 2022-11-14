@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-btn @click="$appXR.start">Hello</v-btn>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>

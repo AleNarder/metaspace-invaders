@@ -1,6 +1,6 @@
-import { object, string } from "yup"
+import { InferType, object, string } from "yup"
 
 export default object({
-    email:     string().required().nullable().email(),
-    password:  string().required().nullable().min(2)
+    email:     string().required().nullable().email().label("Email"),
+    password:  string().required().nullable().min(2).label("Password")
 })

@@ -1,7 +1,3 @@
 import { defineStore } from "pinia";
 
-export default defineStore('authentication', {
-    getters: {
-        
-    }
-})
+export default defineStore("authentication", {});

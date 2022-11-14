@@ -25,7 +25,6 @@ export class AppXR {
   @bind
   async start() {
     try {
-      console.log(this);
 
       await pipeAsync(
         this._initRoot,
@@ -38,7 +37,6 @@ export class AppXR {
         this._initReferenceSpace,
       )(this.options.root);
 
-      console.log(this.session.domOverlayState)
       this.session?.requestAnimationFrame(this._onFrame);
     } catch (e) {
       console.error(e);
