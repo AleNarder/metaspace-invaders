@@ -1,4 +1,4 @@
-import { AppXR } from "./app-xr"
+import { AppXR } from "./app-xr/core/main"
 
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {

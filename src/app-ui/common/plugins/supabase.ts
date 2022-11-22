@@ -1,5 +1,5 @@
 import { App } from "vue"
-import { AppXR } from "../../../app-xr"
+import { AppXR } from "../../../app-xr/core/main"
 
 export default {
     install (app: App<Element>) {

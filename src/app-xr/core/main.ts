@@ -1,7 +1,7 @@
 import { Scene, WebGLRenderer, PerspectiveCamera } from "three";
-import { pipeAsync } from "../lib/helpers/functions";
-import { Cube } from "./features/Cube";
-import { bind } from "../lib/decorators/bind";
+import { pipeAsync } from "../../lib/helpers/functions";
+import { Cube } from "../features/Cube";
+import { bind } from "../../lib/decorators/bind";
 
 export class AppXR {
   private root: HTMLElement | null = null;
@@ -19,6 +19,7 @@ export class AppXR {
       root: string;
     }
   ) {
+    // @ts-expect-error ts(2339)
     window.appxr = this
   }
 

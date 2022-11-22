@@ -1,5 +1,4 @@
 import { App } from "vue"
-import { AppXR } from "../../../app-xr"
 
 export default {
     install (app: App<Element>) {
